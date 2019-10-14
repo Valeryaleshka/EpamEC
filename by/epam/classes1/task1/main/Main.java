@@ -1,4 +1,4 @@
-package by.epam.classes1.main;
+package by.epam.classes1.task1.main;
 
 public class Main {
     public static void main (String [] args){
