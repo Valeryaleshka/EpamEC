@@ -3,7 +3,7 @@ package by.epam.classes1.task5.main;
 import java.util.Random;
 
 public class Counter {
-    private int count = 0;
+    private int count;
     private int maxCount = 100;
     private int minCount = 0;
 
@@ -12,7 +12,7 @@ public class Counter {
     }
 
     public Counter(){
-
+        this.count = 0;
     }
 
     public Counter(int count) {
