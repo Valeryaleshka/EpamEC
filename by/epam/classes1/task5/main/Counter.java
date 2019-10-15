@@ -64,4 +64,12 @@ public class Counter {
     public int getMinCount() {
         return minCount;
     }
+
+    public void setMaxCount(int maxCount) {
+        this.maxCount = maxCount;
+    }
+
+    public void setMinCount(int minCount) {
+        this.minCount = minCount;
+    }
 }
