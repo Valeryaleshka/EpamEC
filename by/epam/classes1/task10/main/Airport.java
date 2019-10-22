@@ -5,8 +5,7 @@ import java.util.Arrays;
 public class Airport {
 
     private Airline[] airlines;
-    private int count = 0;
-
+   
     public Airport() {
         this.airlines = new Airline[0];
     }
