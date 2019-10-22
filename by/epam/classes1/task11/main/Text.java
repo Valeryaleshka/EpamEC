@@ -42,5 +42,9 @@ public class Text {
     public String toString() {
         return text.toString();
     }
+
+    public void printText (){
+        System.out.println(toString());
+    }
 }
 

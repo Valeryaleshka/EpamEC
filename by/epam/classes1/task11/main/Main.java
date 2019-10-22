@@ -3,7 +3,6 @@ package by.epam.classes1.task11.main;
 public class Main {
     public static void main(String [] args){
     Text text = new Text();
-    View view = new View();
     Word word = new Word();
     Sentence sentence = new Sentence();
 
@@ -14,6 +13,6 @@ public class Main {
     text.setText(word);
     text.setText(sentence);
 
-    view.printText(text);
+    text.printText();
     }
 }
