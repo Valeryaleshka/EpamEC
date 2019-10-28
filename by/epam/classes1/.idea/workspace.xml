@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="21a0f72c-7f5f-4f16-aab5-5db6993dc1f7" name="Default Changelist" comment="" />
+    <list default="true" id="085df5a0-5510-46aa-ba67-e50157f5ae09" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -9,15 +9,16 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
   </component>
-  <component name="ProjectId" id="1SpQyTIsuYNiV8BvHJaba5iFHvU" />
+  <component name="ProjectId" id="1SpSfJNqdF5jK0NFskZ1gOWDTdo" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/by/epam/classes1" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Valeronij\Documents\GitHub\EpamEC\by\epam\classes1\task1" />
+      <recent name="C:\Users\Valeronij\Documents\GitHub\EpamEC\by\epam\classes1\task3" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -37,11 +38,11 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="21a0f72c-7f5f-4f16-aab5-5db6993dc1f7" name="Default Changelist" comment="" />
-      <created>1572258311519</created>
+      <changelist id="085df5a0-5510-46aa-ba67-e50157f5ae09" name="Default Changelist" comment="" />
+      <created>1572259145120</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1572258311519</updated>
+      <updated>1572259145120</updated>
     </task>
     <servers />
   </component>
@@ -50,9 +51,7 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>

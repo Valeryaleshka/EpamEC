@@ -1,4 +1,4 @@
-package by.epam.classes1.task3.main;
+package by.epam.classes1.task3;
 
 public class View {
     public void printStudentNameAndGroup(Student student){
