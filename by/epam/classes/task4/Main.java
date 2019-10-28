@@ -30,11 +30,5 @@ public class Main {
        //Сортировка по пункту назначения + время
         trains = logic.getSortedTrainsByDestination(trains);
         view.printTrains(trains);
-
-
     }
-
-
-
-
 }
