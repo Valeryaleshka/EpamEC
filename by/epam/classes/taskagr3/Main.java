@@ -6,6 +6,8 @@ package by.epam.classes.taskagr3;
 public class Main {
     public static void main(String[]args) {
 
+        View view = new View();
+
         State belarus = new State("BELARUS");
         City minsk = new City("Minsk");
         City slutsk = new City("Slutsk");
@@ -24,10 +26,10 @@ public class Main {
         minskaya.addDistrict(homelski);
         belarus.addArea(homilskaya);
 
-        belarus.printCapital();
-        belarus.printAreasNumber();
-        belarus.printAreaCenter();
-        belarus.printSquare();
+        view.printCapital(belarus);
+        view.printAreasNumber(belarus);
+        view.printAreaCenter(belarus);
+        view.printSquare(belarus);
 
 
 

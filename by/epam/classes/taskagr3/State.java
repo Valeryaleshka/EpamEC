@@ -12,6 +12,22 @@ public class State {
         this.stateName = stateName;
     }
 
+    public String getStateName() {
+        return stateName;
+    }
+
+    public Area[] getAreas() {
+        return areas;
+    }
+
+    public City getCapital() {
+        return capital;
+    }
+
+    public double getStateSquare() {
+        return stateSquare;
+    }
+
     public double getSquare(){
 
         double square = 0;
@@ -19,7 +35,7 @@ public class State {
         for (Area area:areas) {
          square+=area.getSquare();
         }
-        
+
         return square;
     }
 
@@ -27,26 +43,9 @@ public class State {
         this.areas = Arrays.copyOf(this.areas, this.areas.length + 1);
         this.areas[areas.length - 1] = area;
     }
+
     public void setCapital(City capital){
         this.capital = capital;
-    }
-
-    public void printCapital(){
-        System.out.println(capital.getCityName());
-    }
-
-    public void printAreasNumber(){
-        System.out.println(areas.length);
-    }
-
-    public void printSquare(){
-        System.out.println(getSquare());
-    }
-
-    public void printAreaCenter(){
-        for (Area area:areas) {
-            System.out.println("Область - "+area.getAreaName()+", центр - "+area.getAreaCenter().getCityName());
-        }
     }
 }
 
