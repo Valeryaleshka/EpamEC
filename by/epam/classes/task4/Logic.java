@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Logic {
 
-    public Train[] sortTrainsByNumber (Train [] trains){
+    public Train[] getSortedTrainsByNumber(Train [] trains){
         Train temp = new Train();
         boolean bool;
         do{
@@ -23,7 +23,7 @@ public class Logic {
     }
 
 
-    public Train printTrainNumberInfo (Train [] trains) {
+    public Train getTrainNumberInfo (Train [] trains) {
 
         Scanner scanner = new Scanner(System.in);
         View view = new View();
@@ -42,24 +42,24 @@ public class Logic {
     }
 
 
-    public Train[] sortByDestination (Train[]trains){
+    public Train[] getSortedTrainsByDestination (Train[]trains){
 
         Train temp = new Train();
+
         boolean bool;
 
         do{
             bool = true;
             for (int i = 0; i < trains.length-1; i++) {
-                String destination1 = trains[i].getFinalDestination().toLowerCase();
-                String destination2 = trains[i+1].getFinalDestination().toLowerCase();
-                if (destination1.compareTo(destination2) > 0) {
+
+                if (trains[i].getFinalDestination().compareToIgnoreCase(trains[i+1].getFinalDestination()) > 0) {
                             temp = trains[i];
                             trains[i]=trains[i+1];
                             trains[i+1]=temp;
                             bool = false;
                 }
 
-                if (destination1.compareTo(destination2) == 0) {
+                if (trains[i].getFinalDestination().compareToIgnoreCase(trains[i+1].getFinalDestination()) == 0) {
 
                     if(trains[i].getDepartureTimeHrs()>trains[i+1].getDepartureTimeHrs()){
                         temp = trains[i];
