@@ -1,4 +1,4 @@
-package by.epam.classes1.task4.main;
+package by.epam.classes1.task4;
 
 public class Train {
     private String finalDestination;
