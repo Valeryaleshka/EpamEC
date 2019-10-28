@@ -1,1 +1,1 @@
-Задания Java Wb Develepment by EPAM
+Задания Java Web Develepment by EPAM
