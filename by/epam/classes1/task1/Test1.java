@@ -1,4 +1,4 @@
-package by.epam.classes1.task1.main;
+package by.epam.classes1.task1;
 
 public class Test1 {
     private int x;
