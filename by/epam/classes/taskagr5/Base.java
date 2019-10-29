@@ -25,8 +25,10 @@ public class Base {
     }
 
     public void addTravelPackage (TravelPackage travelPackage) {
-        travelPackages = Arrays.copyOf(travelPackages, travelPackages.length + 1);
-        travelPackages[travelPackages.length - 1] = travelPackage;
+
+            travelPackages = Arrays.copyOf(travelPackages, travelPackages.length + 1);
+            travelPackages[travelPackages.length - 1] = travelPackage;
+
     }
 
     public Duration[] getDurations() {
@@ -63,7 +65,7 @@ public class Base {
 
     public Duration getDurations(int i) {
         if (i<=durations.length&&i>0){
-            return durations[i-1];
+            return durations[i - 1];
         }
         return null;
     }
@@ -87,7 +89,7 @@ public class Base {
 
     public Transport getTransports(int i) {
         if (i <= transports.length && i > 0) {
-            return transports[i];
+            return transports[i-1];
         }
         return null;
     }
@@ -99,8 +101,8 @@ public class Base {
     }
 
     public TravelPackage getTravelPackages(int i) {
-        if (i<=travelPackages.length&&i>0) {
-            return travelPackages[i];
+        if (i<=travelPackages.length&&i>=0) {
+            return travelPackages[i-1];
         }
         return null;
     }

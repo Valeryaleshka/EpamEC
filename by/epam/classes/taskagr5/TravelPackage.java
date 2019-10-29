@@ -8,6 +8,14 @@ public class TravelPackage {
     private Food food;
     private Transport transport;
 
+    public TravelPackage(){
+        this.name = "";
+        this.destination = "";
+        this.duration = null;
+        this.food = null;
+        this.transport = null;
+    }
+
     public TravelPackage(String name, String destination, Duration duration, Food food, Transport transport) {
         this.name = name;
         this.destination = destination;
@@ -48,12 +56,20 @@ public class TravelPackage {
         this.transport = transport;
     }
 
+    public String getDestination() {
+        return destination;
+    }
+
+    public void setDestination(String destination) {
+        this.destination = destination;
+    }
+
     @Override
     public String toString() {
         return "Пакет " + name +
-                ", Пункт -" + destination +
-                ", Продолжительность -" + duration +
-                ", Еда -" + food +
-                ", Транспорт" + transport;
+                ", Пункт - " + destination +
+                ", Продолжительность - " + duration.toString()  +
+                ", Еда - " + food.getTypeOfFood() +
+                ", Транспорт - " + transport.getTransport();
     }
 }
