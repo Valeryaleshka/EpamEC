@@ -1,3 +1,5 @@
+//1. Дана матрица. Вывести на экран все нечетные столбцы, у которых первый элемент больше последнего
+
 import java.util.Random;
 public class Test2 {
     public static void main(String[] arg) {
