@@ -1,8 +1,9 @@
+//задание в файле Practice (tasks).pdf
+
 public class Test2 {
     public static void main(String[] arg) {
 
-        int n = 6;
-        
+        int n = 6;        
         
         int arrow[][] = new int[n][n];
 
