@@ -1,0 +1,41 @@
+//8. Вводится строка слов, разделенных пробелами. 
+//Найти самое длинное слово и вывести его на экран. Случай, когда самых длинных слов может быть несколько, не обрабатывать. 
+
+public class Main {
+    public static void main (String [] args){
+
+
+        String string = "Самый популярный русский двухтомникhhhhhh по Java. Десятое издание обновили с учетом Java 8! В первом томе труда";
+
+        String [] strings = string.split(" ");
+        int [] numbersOfLetters =new int[strings.length];
+
+        int indexOfWord = 0;
+        int maxLetters = 0;
+
+        for (int i = 0; i < strings.length; i++) {
+            numbersOfLetters[i]=strings[i].length();
+
+        }
+
+        for (int i:numbersOfLetters) {
+            if (i>maxLetters){
+                maxLetters = i;
+            }
+        }
+
+        int countOfMaxLetters = 0;
+        for (int i = 0; i <numbersOfLetters.length; i++) {
+            if(numbersOfLetters[i]==maxLetters){
+                countOfMaxLetters++;
+                indexOfWord = i;
+            }
+
+        }
+
+        if (countOfMaxLetters==1){
+            System.out.println(strings[indexOfWord]);
+        }
+        
+    }
+}
