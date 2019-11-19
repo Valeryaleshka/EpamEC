@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class Test1 {
+    public static void main(String[] arg) {
+        int z;       
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Введите x");
+
+        while (!scanner.hasNextInt()) {
+            System.out.println("Введите x");
+            scanner.next();
+            }
+        int x = scanner.nextInt();
+
+            if(x<=3){
+               z = x*x-3*x+9;
+            }
+            else {
+               z = x*x*x+6;
+            }
+            if(x<=3) {
+            System.out.println(z);
+            }
+            else {
+            System.out.println("1/"+z);
+            }
+        }
+    }

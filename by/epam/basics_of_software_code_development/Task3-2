@@ -1,0 +1,59 @@
+import java.util.Scanner;
+import java.lang.String;
+
+public class Test1 {
+    public static void main(String[] arg) {
+       double y;
+       Scanner scanner = new Scanner(System.in);
+
+       System.out.println("Введите а (int)");
+       while(!scanner.hasNextInt()) {
+           System.out.println("Введите а (int)");
+           scanner.next();
+       }
+       int a = scanner.nextInt();
+
+        System.out.println("Введите b (int)");
+        while(!scanner.hasNextInt()) {
+            System.out.println("Введите b (int)");
+            scanner.next();
+        }
+        int b = scanner.nextInt();
+
+        System.out.println("Введите n (double)");
+        while(!scanner.hasNextDouble()) {
+            System.out.println("Введите n (double)");
+            scanner.next();
+        }
+        double n = scanner.nextDouble();
+
+        if(b<a){
+            int res = b;
+            b = a;
+            a = res;
+        }
+
+        for(double x = a; x<=b;){
+            if(x>2){
+                y=x;
+                System.out.print("При x = ");
+                System.out.printf("%.2f", x);
+                System.out.print(", y = ");
+                System.out.printf("%.2f", y);
+                System.out.print(";");
+                System.out.println( );
+                x=x+n;}
+            else {
+                y=x*(-1);
+                System.out.print("При x = ");
+                System.out.printf("%.2f", x);
+                System.out.print(", y = ");
+                System.out.printf("%.2f", y);
+                System.out.print(";");
+                System.out.println( );
+                x=x+n;
+            }
+        }
+
+    }
+}

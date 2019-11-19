@@ -1,0 +1,10 @@
+public class Test1{
+            public static void main(String[] arg) {
+              double x,y,z;
+              x=30;
+              y=30;
+              z = (Math.sin(x)+Math.cos(y))/(Math.cos(x)-Math.sin(y))*Math.tan(x*y);
+              System.out.println(z);
+
+    }
+}

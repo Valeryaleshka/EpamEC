@@ -1,0 +1,37 @@
+import java.util.Scanner;
+
+public class Test1 {
+    public static void main(String[] arg) {
+       Scanner scanner = new Scanner(System.in);
+       System.out.println("Введите первое число");
+
+        while (!scanner.hasNextInt()) {
+            System.out.println("Неправильно");
+            System.out.println("Введите первое число");
+            scanner.next();
+        }
+        int number1 = scanner.nextInt();
+
+        System.out.println("Введите второе число");
+
+        while (!scanner.hasNextInt()) {
+            System.out.println("Неправильно");
+            System.out.println("Введите второе число");
+            scanner.next();
+        }
+        int number2 = scanner.nextInt();
+
+        String number1s = Integer.toString(number1);
+        String number2s = Integer.toString(number2);
+
+        System.out.print("Совпадают следующие числа: ");
+          for(int i = 0;i<number1s.length();i++){
+            for(int i2 =0;i2<number2s.length();i2++){
+                if (number1s.charAt(i)==number2s.charAt(i2)) {
+                    System.out.print(number1s.charAt(i) + " ");
+                    break;
+                }
+            }
+          }
+    }
+}

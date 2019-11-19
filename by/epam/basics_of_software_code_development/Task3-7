@@ -1,0 +1,58 @@
+import java.util.Scanner;
+
+public class Test1 {
+    public static void main(String[] arg) {
+        Scanner scanner = new Scanner(System.in);
+        int count = 0;
+        int n, m;
+
+        do {
+            System.out.println("Введите натуральное число n");
+
+            while (!scanner.hasNextInt()) {
+                System.out.println("Введите натуральное число n");
+                scanner.next();
+            }
+            n = scanner.nextInt();
+        } while (n <= 0); //проверка n
+
+        do {
+            System.out.println("Введите натуральное число m");
+            while (!scanner.hasNextInt()) {
+                System.out.println("Введите натуральное число m");
+                scanner.next();
+            }
+            m = scanner.nextInt();
+        } while (m <= 0); //проверка m
+
+        if(n>m){
+            int scum;
+            scum=n;
+            n=m;
+            m=scum;
+        }               //проверка n<m
+
+        for (int number = n; number < m; number++) {
+            System.out.println();
+            System.out.print("Делители для " + number + " - ");
+            if(number==1|number==2){
+                System.out.print("Делителей нету");
+            }  //проверка на 1,2.
+
+            for (int i = 2; i < number; i++) {
+                if (number % i == 0) {
+                    System.out.print(i + " ");
+                    count++;
+                }
+                if (i == number - 1) {
+                      if (count == 0) {
+                        System.out.print("Делителей нету");
+
+                    }
+                      else count = 0;
+
+                }
+            }
+        }
+    }
+}

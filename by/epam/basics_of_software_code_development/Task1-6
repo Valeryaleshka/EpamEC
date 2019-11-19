@@ -1,0 +1,14 @@
+import java.util.Scanner;
+
+public class Test1 {
+    public static void main(String[] arg) {
+        boolean x = false;
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Введите координату х");
+        int scanx = scanner.nextInt();
+        System.out.println("Введите координату y");
+        int scany = scanner.nextInt();
+
+        System.out.println((-4 <= scanx & scanx<=4 & -3 <= scany & scany<=0)|(scanx>=-2 & scanx<=2 & scany>=0 & scany<=4));
+    }
+}

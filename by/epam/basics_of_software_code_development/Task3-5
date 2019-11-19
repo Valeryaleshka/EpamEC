@@ -1,0 +1,41 @@
+import java.util.Scanner;
+import static java.lang.Math.abs;
+import static java.lang.Math.pow;
+
+
+public class Test2 {
+    public static void main(String[] arg) {
+        double summ = 0;
+        double number = 0;
+        Scanner scanner = new Scanner(System.in);
+    System.out.println("Введите первое и последнее число ряда N ");
+
+    while(!scanner.hasNextInt()) {
+            System.out.println("Введите первое число");
+            scanner.next();
+        }
+        int x = scanner.nextInt();
+
+        while(!scanner.hasNextInt()) {
+            System.out.println("Введите второе число");
+            scanner.next();
+        }
+        int y = scanner.nextInt();
+
+        System.out.println("Введите число Е");
+
+        while(!scanner.hasNextDouble()) {
+            System.out.println("Введите число Е");
+            scanner.next();
+        }
+        double e = scanner.nextDouble();
+
+        for(int i =x;i<=y;i++) {
+            number = 1/pow(2,i)+1/pow(3,i);
+            if (abs(number)>=e){
+                summ+=number;
+            }
+        }
+        System.out.println("Сумма чисел равна = "+number);
+    }
+}

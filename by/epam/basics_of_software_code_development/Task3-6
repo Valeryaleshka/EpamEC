@@ -1,0 +1,8 @@
+public class Test1 {
+    public static void main(String[] arg) {
+
+        for(int a =97; a<150;a++){
+            System.out.println(a + " - "+(char)a);
+        }
+    }
+}

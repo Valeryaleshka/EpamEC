@@ -1,0 +1,9 @@
+public class Test1 {
+    public static void main(String[] arg) {
+        int summ = 0;
+        for(int i =1;i<=100;i++){
+            summ+=i*i;
+        }
+        System.out.println(summ);
+    }
+}

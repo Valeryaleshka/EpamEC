@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+public class Test1 {
+    public static void main(String[] arg) {
+       Scanner scanner = new Scanner(System.in);
+       int x,y,z,a,b;
+       a=10;
+       b=15;
+       System.out.println("Введите высоту кирпича");
+       x=scanner.nextInt();
+       System.out.println("Введите шарину кирпича");
+       y=scanner.nextInt();
+       System.out.println("Введите длину кирпича");
+       z=scanner.nextInt();
+
+       if(x<=a & y<=b | y<=a & x<=b |y<=a & z<=b | z<=a & y<=b |z<=a & x<=b | x<=a & z<=b  ){
+           System.out.println("Кирпич пройдет через отверстие");
+       }
+       else
+           System.out.println("Кирпич пройдет через отверстие");
+    }
+}

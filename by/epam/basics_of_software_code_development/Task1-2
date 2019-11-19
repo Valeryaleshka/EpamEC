@@ -1,0 +1,12 @@
+import static java.lang.Math.pow;
+
+public class Test1{
+            public static void main(String[] arg) {
+              double a,b,c,z;
+              a=1;
+              b=2;
+              c=3;
+              z = (b+pow(pow(b,2)+4*a*c,1/2))/2*a-pow(a,3)*c+pow(b,-2);
+              System.out.println(z);
+    }
+}

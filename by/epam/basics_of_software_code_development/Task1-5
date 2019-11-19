@@ -1,0 +1,10 @@
+public class Test1{
+            public static void main(String[] arg) {
+              int i = 33590;
+              int h = i/3600;
+              int m = i/60;
+              int s = i%60;
+              System.out.println(h+"Ч "+m+"М "+s+"C");
+
+    }
+}

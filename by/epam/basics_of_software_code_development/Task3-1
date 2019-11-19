@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class Test1 {
+    public static void main(String[] arg) {
+        Scanner sc = new Scanner(System.in);
+        int number;
+        int summ = 0;
+        do {
+            System.out.println("Введите целое положительное число");
+            while (!sc.hasNextInt()) {
+                System.out.println("Условия не те");
+                sc.next();
+            }
+            number = sc.nextInt();
+        } while (number <= 0);
+        for(int i =1;i<number;i++){
+            summ+=i;
+        }
+        System.out.println("Сумма = "+summ);
+    }
+}
