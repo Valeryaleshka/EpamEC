@@ -1,5 +1,7 @@
 package by.epam.oop.task4.theDragonsCave;
 
+import by.epam.oop.task4.theDragonsCave.treasure.Treasure;
+
 import java.util.Arrays;
 
 public class TheDragonsCave {

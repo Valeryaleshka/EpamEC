@@ -10,7 +10,7 @@
 package by.epam.oop.task4.main;
 
 import by.epam.oop.task4.theDragonsCave.TheDragonsCave;
-import by.epam.oop.task4.theDragonsCave.TreasureLogic;
+import by.epam.oop.task4.theDragonsCave.treasure.TreasureLogic;
 
 import java.io.FileNotFoundException;
 import java.util.Scanner;
@@ -22,7 +22,7 @@ public class Main {
         TreasureLogic treasureLogic = new TreasureLogic();
         TheDragonsCave theDragonsCave = new TheDragonsCave();
 
-        treasureLogic.addTreasureFromTXT("C:\\Users\\Valeronij\\IdeaProjects\\classes\\src\\by\\epam\\oop\\task4\\theDragonsCave\\Treasures.txt", theDragonsCave);
+        treasureLogic.addTreasureFromTXT("C:\\Users\\Valeronij\\IdeaProjects\\classes\\src\\by\\epam\\oop\\task4\\theDragonsCave\\treasure\\Treasures.txt", theDragonsCave);
 
         Scanner scanner = new Scanner(System.in);
 

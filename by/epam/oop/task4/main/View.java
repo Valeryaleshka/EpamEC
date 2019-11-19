@@ -1,8 +1,8 @@
 package by.epam.oop.task4.main;
 
 import by.epam.oop.task4.theDragonsCave.TheDragonsCave;
-import by.epam.oop.task4.theDragonsCave.Treasure;
-import by.epam.oop.task4.theDragonsCave.TreasureLogic;
+import by.epam.oop.task4.theDragonsCave.treasure.Treasure;
+import by.epam.oop.task4.theDragonsCave.treasure.TreasureLogic;
 
 public class View {
 
