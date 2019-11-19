@@ -1,3 +1,5 @@
+//3. Дана матрица. Вывести k-ю строку и p-й столбец матрицы.
+
 import java.util.Random;
 public class Test2 {
     public static void main(String[] arg) {
