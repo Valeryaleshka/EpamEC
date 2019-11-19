@@ -1,0 +1,41 @@
+/*
+Проверить, является ли заданное слово палиндромом.
+ */
+
+public class Test2 {
+
+    public static String doReverse(String string){
+
+        String reverse = new String();
+
+        for (int i = string.length()-1; i >= 0 ; i--) {
+            reverse+=string.charAt(i);
+        }
+
+        return reverse;
+
+    }
+
+    public static String doOnlyLetters (String string){
+
+        string = string.replaceAll(" ","");
+        string = string.replaceAll("\\.","");
+        string = string.replaceAll("\\,","");
+        string = string.toLowerCase();
+        return string;
+    }
+
+
+    //Main
+
+    public static void main(String[] arg) {
+
+        String string = "А роза упала на лапу Азора.";
+
+        String stringTemp = doOnlyLetters(string);
+
+        String stringReverse = doReverse(stringTemp);
+
+        System.out.println(stringTemp.equals(stringReverse));
+    }
+}

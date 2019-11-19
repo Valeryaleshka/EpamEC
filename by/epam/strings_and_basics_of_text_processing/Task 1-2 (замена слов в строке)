@@ -1,0 +1,57 @@
+/*
+Замените в строке все вхождения "word" на "letter".
+ */
+
+public class Test2 {
+
+    //Метод замены слова word на letter
+
+    public static String replaceWord (String word) {
+
+        int count = 0;
+
+        String newword = new String();
+
+
+
+        for (int i = 0; i < word.length()-3; i++) {
+            if (word.charAt(i)=='w') {
+                if (word.charAt(i+1)=='o'){
+                    if (word.charAt(i+2)=='r'){
+                        if (word.charAt(+3)=='d'){
+                            newword += "letter";
+                            i+=4;
+                        }
+                    }
+                }
+            }
+            newword+=word.charAt(i);
+        }
+
+        String result = newword.toLowerCase();
+
+        return result;
+    }
+
+
+    //Main
+
+    public static void main(String[] arg) {
+
+        String word = "word word word haha word wordhaha wor";
+        System.out.println(replaceWord(word));
+
+    }
+
+
+    /*
+    или так =)
+
+    public static void main(String[] arg) {
+
+        String arrow = "word word word haha word wordhaha wor";
+
+        System.out.println(arrow.replaceAll("word","letter"));
+
+    }*/
+}

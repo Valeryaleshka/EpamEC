@@ -1,0 +1,233 @@
+/*
+Cоздать приложение, разбирающее текст (текст хранится в строке) и позволяющее выполнять с текстом три различных
+операции: отсортировать абзацы по количеству предложений; в каждом предложении отсортировать слова по длине;
+отсортировать лексемы в предложении по убыванию количества вхождений заданного символа, а в случае равенства – по
+алфавиту.
+*/
+
+import java.util.Arrays;
+import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class Test2 {
+
+    // Метод деления текста на предложения
+
+   private static  String [] findSentence(String string){
+
+        string = string.replaceAll("\\.+","\\.").replaceAll("|\t","");
+
+        return string.split("[.!?]");
+
+    }
+
+    // Метод Подсчет количества предложений
+
+    private static int findSentenceCount (String string){
+
+        String [] arrow = findSentence(string);
+
+        return arrow.length;
+
+    }
+
+    // Метод деления текста на абзацы и упорядочивания по количеству предложений
+
+    private static void abzats(String string){
+
+        string = string.replaceAll("\n"," ");
+
+        String [] arrow = string.split("\t");
+
+        int [] arrowznachenie = new int[arrow.length];
+
+        for (int i = 0; i < arrowznachenie.length; i++) {
+            arrowznachenie[i]=findSentenceCount(arrow[i]);
+        }
+
+        boolean bool;
+
+        do {
+            bool = true;
+            for (int i = 0; i < arrowznachenie.length-1; i++) {
+                if(arrowznachenie[i]>arrowznachenie[i+1]){
+                    bool = false;
+                    int temp = arrowznachenie [i];
+                    arrowznachenie[i]=arrowznachenie[i+1];
+                    arrowznachenie[i+1] = temp;
+                    String tempString = arrow[i];
+                    arrow[i]=arrow[i+1];
+                    arrow[i+1]=tempString;
+
+                }
+            }
+
+        }while (!bool);
+
+        for (String s:arrow) {
+
+            System.out.println("\t"+s);
+        }
+
+    }
+
+    //Метод разбития предложения на слова
+
+    private static String [] findWordsInSentence (String sentence){
+
+        return sentence.split("\\s+");
+
+
+    }
+
+    //Метод сортировки слов по длинне
+
+    private static void sortWordsInSentence (String [] strings){
+
+        for (String string : strings) {
+
+            String[] temp = findWordsInSentence(string);
+
+            int[] tempInt = new int[temp.length];
+
+            boolean bool;
+            for (int j = 0; j < temp.length; j++) {
+                tempInt[j] = temp[j].length();
+            }
+
+            do {
+                bool = true;
+                for (int k = 0; k < temp.length - 1; k++) {
+                    if (tempInt[k] > tempInt[k + 1]) {
+
+                        int temp1 = tempInt[k];
+                        tempInt[k] = tempInt[k + 1];
+                        tempInt[k + 1] = temp1;
+                        String tempString = temp[k];
+                        temp[k] = temp[k + 1];
+                        temp[k + 1] = tempString;
+                        bool = false;
+                    }
+                }
+
+            } while (!bool);
+
+
+            for (int j = 0; j < temp.length; j++) {
+                if (j < temp.length - 1) {
+                    System.out.print(temp[j] + " ");
+                } else {
+                    System.out.print(temp[j]);
+                }
+            }
+            System.out.print(". ");
+        }
+    }
+
+    //Метод сортировки по включению символов и алфавиту
+
+    private static void sortWordsByChar(String string){
+
+        System.out.println("Введите символ");
+        
+        Scanner scanner = new Scanner(System.in);
+        char ch = scanner.next().charAt(0);
+        String ch1 = String.valueOf(ch);
+        String [] senteces = findSentence(string);
+       
+        for (String i:senteces) {
+            i = i.replaceAll("[.,!?]","");
+           
+            String [] sent = findWordsInSentence(i);
+
+            for (int j = 0; j < sent.length; j++) {
+                sent[j]=sent[j].toLowerCase();
+            }
+            Arrays.sort(sent);
+
+            int [] sentNumbers =new int[sent.length];
+
+            for (int j = 0; j < sent.length ; j++) {
+                String input = sent[j];
+                Pattern pattern = Pattern.compile(ch1);
+                Matcher matcher = pattern.matcher(input);
+                while(matcher.find())
+                    sentNumbers[j]++;
+            }
+            boolean bool;
+            do {
+                bool = true;
+                for (int k = 0; k < sent.length-1; k++) {
+                    if(sentNumbers[k]<sentNumbers[k+1]){
+
+                        int temp1 = sentNumbers[k];
+                        sentNumbers[k]=sentNumbers[k+1];
+                        sentNumbers[k+1] = temp1;
+                        String tempString = sent[k];
+                        sent[k]=sent[k+1];
+                        sent[k+1]=tempString;
+                        bool = false;
+                    }
+                }
+            }while (!bool);
+            for (String s:sent) {
+                System.out.print(s+" ");
+            }
+            System.out.print(".");
+        }
+    }
+
+    public static void main(String[] arg){
+
+        String string = "\tАт Бт Гт Вт. В тот самтттый как бы...... день я вышла на работу в качестве исполнительного директора программы МВА \n\tодной из самых известных Бизнес-школ города. Руководство долго уговаривало меня взять на себя такую ответственность, так как прежний директор уволился как-то спонтанно посреди учебного года. Я была счастлива выйти на эту работу. Меня устраивало все: и то, что меня просили заступить в должность незамедлительно, и зарплата, и окружение, и, конечно, сами слушатели, сплошь состоящие из умных, состоятельных бизнесменов. О чем еще могла мечтать молодая разведенная женщина?\n\tКогда приходишь новым руководителем в старый спаянный коллектив стараешься со всеми подружиться, быть приветливой или хотя бы менее шероховатой, чтобы не вызывать лишних вопросов и негатива, которого и так в таких случаях бывает много.Для нормальной адаптации на новом месте, даже если к тебе очень лояльно вышестоящее руководство, необходимо разузнать неформальную структуру коллектива и его «наиважнейших» работников, которыми могут оказаться совершенно неприметные на первый взгляд личности. \n\tТак вот, зайдя в свой кабинет первым делом я начала проводить ревизию вещей на своем рабочем столе, ящиках и стеллажах. В самый разгар моей приборки дверь тихо скрипнула, и в щели я увидела два любопытных черных глаза.";
+
+        System.out.println(string);
+
+
+        boolean bool = false;
+
+        String choice = "";
+
+        Scanner scanner = new Scanner(System.in);
+
+        do{
+            System.out.println("Что желаете сделать с этим текстом? Нажмите 1,2 или 3. q для выхода");
+            System.out.println("1 - Отсортировать абзацы по количеству предложений");
+            System.out.println("2 - В каждом предложении отсортировать слова по длине");
+            System.out.println("3 - отсортировать лексемы в предложении по убыванию количества вхождений заданного символа, а в случае равенства – по алфавиту");
+            System.out.println("q - Выход");
+
+            if(scanner.hasNext("q")){
+                choice = scanner.next();
+                bool = true;
+            }else  if(scanner.hasNextInt()){
+
+                int choiceint = scanner.nextInt();
+
+                if(choiceint>0 && choiceint<4) {
+                    choice = Integer.toString(choiceint);
+                    bool = true;
+                }
+            }else scanner.next();
+
+        }while (!bool);
+
+        switch (choice){
+            case("1"): 
+                System.out.println("Абзацы упорядочены по возрастанию количества предложений");
+                abzats(string);
+                break;
+            case("2"): 
+                System.out.println("В каждом предложении отсортировны слова по длине");
+                sortWordsInSentence(findSentence(string));
+                break;
+            case("3"):
+                sortWordsByChar(string);
+                break;
+            case("q"):
+                System.out.println("Выход из программы");
+                break;
+        }
+    }
+}

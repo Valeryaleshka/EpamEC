@@ -1,0 +1,52 @@
+/*
+В строке найти количество чисел
+ */
+
+public class Test2 {
+
+    //Метод проверки на цифру
+    
+    public static boolean checkDigit (char ch){
+        if(Character.isDigit(ch)){
+            return true;
+        }
+
+        return false;
+    }
+    
+    //Метод для подсчета количества чисел
+        
+    public static int findNumbers (String string) {
+
+        int count = 0;
+
+
+        for (int i = 0; i < string.length(); i++) {
+            if(checkDigit(string.charAt(i))){
+                while (checkDigit(string.charAt(i))){
+                    if(i==string.length()-1){
+                        break;
+                    }
+                    i++;
+                }
+
+                count++;
+            }
+
+        }
+
+
+        return count;
+    }
+
+
+    //Main
+
+    public static void main(String[] arg) {
+
+        String string = "6 66 6660 6 66666 7 78";
+        System.out.println("количество цифр = "+findNumbers(string));
+
+    }
+
+}

@@ -1,0 +1,35 @@
+/*
+В строке найти количество цифр
+ */
+
+public class Test2 {
+
+    //Метод нахождения цифр в строке
+
+    public static int findDigits (String word) {
+
+        int count = 0;
+
+
+        for (int i = 0; i < word.length(); i++) {
+            if (Character.isDigit(word.charAt(i))) {
+                count++;
+            }
+
+        }
+
+
+        return count;
+    }
+
+
+    //Main
+
+    public static void main(String[] arg) {
+
+        String word = "w6ord6 wo6rd w36ord3 haha w3ord wor32dh52aha22 w43or";
+        System.out.println("количество цифр = "+findDigits(word));
+
+    }
+
+}

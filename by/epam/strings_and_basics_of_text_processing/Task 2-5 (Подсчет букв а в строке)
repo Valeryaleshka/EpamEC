@@ -1,0 +1,19 @@
+/*
+Посчитать сколько раз среди символов заданной строки встречается буква "a"
+ */
+
+public class Test2 {
+
+    //Main
+
+    public static void main(String[] arg) {
+
+        String string = "а а а а а а";
+        String stringSpaceCount = string + " ";
+
+        String [] strings = stringSpaceCount.split("а");
+
+        System.out.println("Количество предложений - "+ ((strings.length)-1));
+
+    }
+}

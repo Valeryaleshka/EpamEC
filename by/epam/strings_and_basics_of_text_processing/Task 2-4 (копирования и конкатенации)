@@ -1,0 +1,17 @@
+/*
+С помощью функции копирования и операции конкатенации составить из частей слова "информатика" слово "торт"
+ */
+
+public class Test2 {
+
+    //Main
+
+    public static void main(String[] arg) {
+
+        String string = "информатика";
+
+        String stringTemp = string.substring(7,8).concat(string.substring(3,4)).concat(string.substring(4,5).concat(string.substring(7,8)));
+
+        System.out.println(stringTemp);
+    }
+}

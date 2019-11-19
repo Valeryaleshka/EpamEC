@@ -1,0 +1,19 @@
+/*
+В строке вставить после каждого символ "a" символ "b"
+ */
+
+public class Test2 {
+
+    //Main
+
+    public static void main(String[] arg) {
+
+        int max = 0;
+
+        String string = " a d e a g u b d 4 6 a  ";
+
+        string = string.replaceAll("a","ab");
+        System.out.println(string);
+
+    }
+}

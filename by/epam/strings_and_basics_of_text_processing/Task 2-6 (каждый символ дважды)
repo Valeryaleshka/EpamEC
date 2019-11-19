@@ -1,0 +1,17 @@
+/*
+Из данной строки получить новую, повторив каждый символ дважды.
+ */
+
+public class Test2 {
+
+    //Main
+
+    public static void main(String[] arg) {
+
+        String string = "информатика";
+
+        String stringTemp = string.replaceAll(".", "$0$0");
+
+        System.out.println(stringTemp);
+    }
+}

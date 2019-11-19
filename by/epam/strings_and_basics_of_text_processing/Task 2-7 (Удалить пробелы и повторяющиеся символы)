@@ -1,0 +1,41 @@
+/*
+Вводится строка. Требуется удалить из нее повторяющиеся символы и все пробелы. 
+Например, если было введено "abc cde def", то должно быть выведено "abcdef".
+ */
+
+public class Test2 {
+
+
+    public static String deleteAll(String string) {
+
+        StringBuilder stringBuilder = new StringBuilder();
+
+        stringBuilder.append(string.charAt(0));
+
+        for (int i = 1; i < string.length(); i++) {
+            int count = 0;
+            for (int j = 0; j < i; j++) {
+                if (string.charAt(i)==string.charAt(j)){
+                    count++;
+                }
+
+            }
+
+            if (count==0){
+                stringBuilder.append(string.charAt(i));
+            }
+        }
+        
+        return stringBuilder.toString();
+    }
+    //Main
+
+    public static void main(String[] arg) {
+
+        String string = "Smdkvc mnsksdm l33464в ьовос лчыs jsd JDj";
+
+        String newString = string.replaceAll( "\\s","");
+
+        System.out.println(deleteAll(newString));
+    }
+}

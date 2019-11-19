@@ -1,0 +1,69 @@
+/*
+Дан массив переменных в camelCase. Преобразовать названия в snake_case.
+ */
+
+public class Test2 {
+
+    //Метод преобразования camelCase в snake_case
+
+    public static String toSnakeCase (String word) {
+
+        int count = 0;
+
+        String newword = new String();
+
+        newword += word.charAt(0);
+
+        for (int i = 1; i < word.length(); i++) {
+            if (Character.isUpperCase(word.charAt(i))) {
+                newword += '_';
+                newword += word.charAt(i);
+            } else {
+                newword += word.charAt(i);
+            }
+        }
+
+        String result = newword.toLowerCase();
+
+        return result;
+    }
+
+    //Метод изменения членов массива
+
+    public static String []transfomArrow (String arrow[]){
+
+        String temp [] = new String[arrow.length];
+
+
+        for (int i = 0; i < arrow.length ; i++) {
+
+           temp[i] = toSnakeCase(arrow[i]);
+
+        }
+
+        return temp;
+    }
+
+    //Метод вывода на печать массива
+
+    public static void toPrintArrow(String [] arrow){
+        for (int i = 0; i < arrow.length; i++) {
+            System.out.print(arrow[i]+" ");
+        }
+
+    }
+
+
+    //Main
+
+
+    public static void main(String[] arg) {
+
+        String [] arrow = {"camelCase", "superSlovo", "ProstoOfigetKakoeDlinnoeSlovo", "korotKoe", "pervoeSlovo"};
+
+        arrow = transfomArrow(arrow);
+
+        toPrintArrow(arrow);
+
+    }
+}

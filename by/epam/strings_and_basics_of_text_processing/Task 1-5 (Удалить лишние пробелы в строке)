@@ -1,0 +1,87 @@
+/*
+Удалить в строке все лишние пробелы, то есть серии подряд идущих пробелов заменить на одиночные пробелы.
+Крайние пробелы в строке удалить.
+ */
+
+public class Test2 {
+
+    //Метод проверки на пробел
+
+    public static boolean checkSpace (char ch){
+        if(ch==' '){
+            return true;
+        }
+
+        return false;
+    }
+
+    //Метод убирания пробела в начале и конце
+
+    public static String deleteSpaces(String string){
+
+        String newString = new String();
+
+        if(!checkSpace(string.charAt(0))){
+            newString+=string.charAt(0);
+        }
+
+        for (int i= 1; i < string.length()-1; i++) {
+            newString+=string.charAt(i);
+        }
+
+        if(!checkSpace(string.charAt(string.length()-1))){
+            newString+=string.charAt(string.length()-1);
+        }
+
+        return newString;
+    }
+
+    //Метод для удаления повторяющихся пробелов
+
+    public static String findSpace (String string) {
+
+        String newString = new String();
+
+
+        for (int i = 0; i < string.length(); i++) {
+
+            if (checkSpace(string.charAt(i))) {
+
+                newString += ' ';
+
+                while (checkSpace(string.charAt(i))) {
+                    if (i > string.length() - 1) {
+                        break;
+                    } else {
+                        if (i == string.length() - 1) {
+                            break;
+                        }
+                        i++;
+                    }
+                }
+                if (!checkSpace(string.charAt(i))) {                    
+                        i--;                   
+                }
+
+            } else {
+
+                newString += string.charAt(i);
+
+            }
+        }
+
+        newString = deleteSpaces(newString);
+
+        return newString;
+    }
+
+
+    //Main
+
+    public static void main(String[] arg) {
+
+        String string = "    6      66 6660 6 66666 7 78   5       2     DSAD   ";
+        System.out.println("количество цифр =("+findSpace(string)+")");
+
+    }
+}
