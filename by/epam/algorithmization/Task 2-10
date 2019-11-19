@@ -1,3 +1,5 @@
+//10. Найти положительные элементы главной диагонали квадратной матрицы
+
 import java.util.Random;
 import java.util.Scanner;
 
@@ -11,8 +13,7 @@ public class Test2 {
         int maxi = 0;
 
         int arrow[][] = new int[n][n];
-        int arrowplus[] = new int[n];
-
+        
         ////заполняем матрицу
 
         for (int i = 0; i < n; i++) {
@@ -28,19 +29,13 @@ public class Test2 {
                 System.out.print(arrow[i][j] + "\t");
             }
         }
-
+        // выводим положительные элементы главной диагонали квадратной матрицы
         for(int i=0;i<n;i++){
             if (arrow[i][i] > 0) {
-                arrowplus[i]=arrow[i][i];
+                System.out.print(arrowplus[i] + "\t");
             }
         }
-
-        System.out.println("\n");
-        //Выводим Положительные элементы главной диагонали на печать
-        for (int i =0;i<n;i++) {
-            System.out.print(arrowplus[i] + "\t");
-        }
-
+     
     }
 }
 
