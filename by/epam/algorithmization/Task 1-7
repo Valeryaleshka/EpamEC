@@ -1,3 +1,5 @@
+//7. Даны действительные числа a1, a2,.... an. Найти max(a1 + a2,a2 + a3...... an + a(n+1)).
+
 public class Test2 {
     public static void main(String[] arg) {
 
