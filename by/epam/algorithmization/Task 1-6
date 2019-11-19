@@ -1,22 +1,35 @@
+//6. Задана последовательность N вещественных чисел. Вычислить сумму чисел, порядковые номера которых
+являются простыми числами.
+
 public class Test2 {
     public static void main(String[] arg) {
 
    
         int arrow[] = {5,4,6,-8,0,12,54,-321,6,2,1,0,478,3,10,-6,7,11,17,223,2,5,8};
-       
         
-        System.out.print(arrow[0]+" "+arrow[1]+" ");
-       
+        int tempCount;
         
-        for (int i=3;i<arrow.length;i++) {
-             for(int nat = 2;nat<i;nat++){
-                if(i%nat==0){
-                    break;
-                 }if (nat==i-1){
-                    System.out.print(arrow[i-1]+" ");
+        int summ = arrow[0]+arrow[1];
+
+        for (int i = 2; i < arrow.length; i++) {
+
+            tempCount = 0;
+
+            for (int j = 2; j <= i+1; j++) {
+                if ((i+1)%j==0){
+                    tempCount++;
+
                 }
-             }
+
+            }
+            if(tempCount==1){
+                    summ+=arrow[i];
+
+            }
+
         }
+
+        System.out.println(summ);
     }
 }
 
