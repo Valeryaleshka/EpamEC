@@ -1,0 +1,68 @@
+/*
+Написать метод(методы), проверяющий, являются ли данные три числа взаимно простыми.
+ */
+
+public class Test2 {
+
+    //Метод проверки трёх чисел
+
+    public static boolean isSimple(int a,int b, int c) {
+
+        
+        for (int i = 2; i <=a ; i++) {
+            if(a%i==0 & b%i ==0){
+                return false;
+            }
+            if(a%i==0 & c%i ==0){
+                return false;
+            }
+            if(b%i==0 & c%i ==0){
+                return false;
+            }
+        }
+        
+        
+        for (int i = 2; i <=b ; i++) {
+            if(a%i==0 & b%i ==0){
+                return false;
+            }
+            if(a%i==0 & c%i ==0){
+                return false;
+            }
+            if(b%i==0 & c%i ==0){
+                return false;
+            }
+        }
+        
+        
+        for (int i = 2; i <=c ; i++) {
+            if(a%i==0 & b%i ==0){
+                return false;
+            }
+            if(a%i==0 & c%i ==0){
+                return false;
+            }
+            if(b%i==0 & c%i ==0){
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    ///Main
+
+    public static void main(String[] arg) {
+        int a = 7;
+        int b = 5;
+        int c = 11
+
+                ;
+        if(isSimple(a,b,c)){
+            System.out.print("Данные 3 числа взаимно простые");
+        }else {
+            System.out.print("Данные 3 числа взаимно не простые");
+        }
+
+    }
+}

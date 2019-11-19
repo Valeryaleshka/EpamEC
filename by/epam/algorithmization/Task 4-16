@@ -1,0 +1,109 @@
+/*
+Написать программу, определяющую сумму n-значных чмселю содержащик только нечетные цифры.
+Определить также. сколько четных цифр в найденной сумме. Для решения задачи использовать декомпозицию.
+ */
+
+public class Test2 {
+
+    //Метод проверки числа на нечетность каждого элемента
+
+    public static boolean checkNumberUneven(int n) {
+
+
+        while (n > 0) {
+
+            if (n % 2 == 0) {
+                return false;
+            }
+
+            n /= 10;
+        }
+        return true;
+    }
+
+    //Метод подсчета четных цифр в числе
+
+    public static int checkNumberEvenCount(int n) {
+
+        int count = 0;
+
+        while (n > 0) {
+
+            if (n % 2 == 0) {
+                count++;
+            }
+
+            n /= 10;
+        }
+        return count;
+    }
+    //Метод проверки нужного количества цифр в числе
+
+    public static boolean checkNumbersOfElements(int n, int number) {
+
+        int count = 0;
+
+        while (number > 0) {
+            count++;
+            number /= 10;
+        }
+
+        if (count == n) {
+            return true;
+        }
+
+        return false;
+    }
+
+    //Метод нахождения суммы
+
+    public static int findNumbers(int n) {
+
+        int summ = 0;
+
+        for (int i = 0; i < 999999999; i++) {
+            if (checkNumbersOfElements(n, i)) {
+                if (checkNumberUneven(i)) {
+                    summ += i;
+                }
+            }
+            if (checkNumbersOfElementsMoreThenN(n, i)) {
+                break;
+            }
+
+
+        }
+        return summ;
+    }
+
+    //Метод проверки количества цифр привышающего n
+
+    public static boolean checkNumbersOfElementsMoreThenN(int n, int number) {
+
+        int count = 0;
+
+        while (number > 0) {
+            count++;
+            number /= 10;
+        }
+
+        if (count > n) {
+            return true;
+        }
+
+        return false;
+    }
+
+
+    //Main
+
+    public static void main(String[] arg) {
+
+        int k = 3;
+
+        System.out.println("Сумма нечетных цифр"+findNumbers(k));
+
+        System.out.println(checkNumberEvenCount(findNumbers(k)));
+
+    }
+}

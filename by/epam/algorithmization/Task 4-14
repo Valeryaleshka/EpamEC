@@ -1,0 +1,75 @@
+/*
+Натуральное число, в записи которого n цифр, называется числом Армстронга, если сумма его цифр, возведенных в степень т, равна самому чисул. 
+Найти все числа Армстронга от 1 до К. Для решения задачи использовать декомпиляцию.
+ */
+
+public class Test2 {
+
+    //Метод подсчета количества цифр в числе
+    
+    public static int chechNumberElements( int i) {
+
+        int count = 0;
+
+        while (i != 0) {
+            count++;
+            i /= 10;
+
+        }
+
+        return count;
+
+    }
+
+    //Метод нахождения суммы цифр возведенных в степень количества цифр в числе
+
+    public static int findSummOfElements (int i){
+        int number = i;
+        int summ = 0;
+
+        while (number != 0){
+            summ+= Math.pow(number%10,chechNumberElements(i));
+            number/=10;
+        }
+
+        return summ;
+    }
+
+    //метод сравнивания суммы и числа
+
+    public static boolean checkNumber( int i){
+        boolean bool = false;
+
+        if (findSummOfElements(i) == i){
+            bool = true;
+        }
+
+        return bool;
+    }
+
+    // метод вывода на печать правильного числа
+
+    public static void printArmstrongNumber(int i){
+        if (checkNumber(i)){
+            System.out.print(i+" ");
+        }
+    }
+
+    //метод перебора чисел до K
+
+    public static void getArmstrongNumber(int j){
+        for (int i = 1; i <=j ; i++) {
+            printArmstrongNumber(i);
+        }
+    }
+
+    //Main
+
+    public static void main(String[] arg) {
+
+        int k = 9999;
+
+        getArmstrongNumber(k);
+
+    }
+}

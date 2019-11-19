@@ -1,0 +1,29 @@
+public class Test2 {
+    public static void main(String[] arg) {
+
+        int arrow[] = {1, 2, 3, 4, 5, 6, 7, 8,55,34,2,58};
+        int temp,max,index;
+
+
+        for(int i = 0; i< arrow.length;i++){
+            index = i;
+            max = arrow[i];
+            for(int i2 = i;i2<arrow.length;i2++){
+                if(arrow[i2]>max){
+                    max = arrow[i2];
+                    index = i2;
+                }
+            }
+            temp = arrow[i];
+            arrow[i]=arrow[index];
+            arrow[index]=temp;
+
+        }
+            for(int i = 0 ; i<arrow.length;i++){
+                System.out.print(arrow[i]+" ");
+            }
+
+    }
+}
+
+

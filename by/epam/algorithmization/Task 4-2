@@ -1,0 +1,40 @@
+/*
+Написать метод(методы) для нахождения наибольшего общего делителя четырех натуральных чисел
+ */
+public class Test2 {
+
+    //Метод нахождения  НОД
+
+    public static int Nod(int a, int b, int c, int d){
+        int arrow[] = {a,b,c,d};
+        int min = 0;
+        int nod = 1;
+        for (int i = 0; i <arrow.length;i++){
+            if(arrow[i]>min){
+                min = arrow[i];
+            }
+        }
+
+        for(int i = 2;i<=min; i++){
+            if(a%i==0 && b%i == 0 && c%i == 0 && d%i == 0){
+                nod = i;
+            }
+        }
+        return nod;
+    }
+
+    ///Main
+
+    public static void main(String[] arg) {
+
+        int a = 22;
+        int b = 44;
+        int c = 220;
+        int d = 440;
+
+        System.out.print(Nod(a,b,c,d));
+
+    }
+}
+
+

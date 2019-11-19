@@ -1,0 +1,27 @@
+/*
+Вычислите площадь правильного шестиугольника со стороной аб используя метод вычисления площади треугольника
+ */
+
+public class Test2 {
+
+    //Метод нахождения Площади треугольника
+
+    public static double sTriangle(double a){
+        double square = 0;
+        square = (a*a*Math.sqrt(3))/4;
+
+        return square;
+    }
+
+    ///Main
+
+    public static void main(String[] arg) {
+
+        double a = 5;
+        
+        // Правильный шестиугольник содержит 6 правильных треугольников
+
+        System.out.print(sTriangle(a)*6);
+
+    }
+}

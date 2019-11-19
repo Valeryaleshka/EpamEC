@@ -1,0 +1,43 @@
+import java.util.Random;
+
+public class Test2 {
+    public static void main(String[] arg) {
+        boolean bool = true;
+        int i = 0;
+        int temp;
+       Random random = new Random();
+        int arrow[] = new int[20];
+
+        for (int x =0;x<arrow.length;x++){
+            arrow[x]=random.nextInt(50);
+        }
+
+        for (int x =0;x<arrow.length;x++){
+            System.out.print(arrow[x]+" ");
+
+        }
+        System.out.println();
+        while (i<arrow.length-1){
+            if(arrow[i]<=arrow[i+1]){
+                i++;
+            }
+            else if(i!=0){
+                temp = arrow[i];
+                arrow[i]=arrow[i+1];
+                arrow[i+1]=temp;
+                i--;
+            }else{temp = arrow[i];
+                arrow[i]=arrow[i+1];
+                arrow[i+1]=temp;
+                i++;
+
+            }
+        }
+
+        for (int x =0;x<arrow.length;x++){
+                System.out.print(arrow[x]+" ");
+        }
+    }
+}
+
+

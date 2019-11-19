@@ -1,0 +1,71 @@
+/*
+На плоскости заданы своими координатами n точек. Написать метод(методы), определяющие, между какими
+из пар точек самое большое расстояние. Указание. Координаты занести в массив
+
+Многомерный Массив arrow[2][n] содержит точки i соответственно x = arrow[0][i] и y = arrow[1][i]
+ */
+
+import java.util.Random;
+
+public class Test2 {
+
+    //Метод нахождения наибольшего расстояния между точками и вывода на экран
+
+    public static void distanceBetweenTwoPoints(int arrow[][],int n){
+        
+        
+        double maxdistance = 0;
+
+        int x1=0;
+        int x2=0;
+        int y1=0;
+        int y2=0;
+
+
+        for (int i = 0; i < n ; i++) {
+            int x = arrow [0][i];
+            int y = arrow [1][i];
+
+            for (int j = 0; j < n; j++) {
+                double distance = Math.sqrt(Math.pow(x-arrow[0][j],2)+Math.pow(y-arrow[1][j],2));
+                if(distance>maxdistance){
+                    maxdistance=distance;
+                    x1 = x;
+                    y1 = y;
+                    x2 = arrow[0][j];
+                    y2 = arrow[1][j];
+                }
+
+            }
+        }
+
+        System.out.print("Максимальное расстояние между точками "+x1+";"+y1+" и "+x2+";"+y2+" ровняется "+maxdistance);
+    }
+    
+    ///Main
+
+    public static void main(String[] arg) {
+        int n = 25;
+        int arrow[][]= new int[2][n];
+        Random random = new Random();
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < n; j++) {
+                arrow[i][j]= random.nextInt(16);
+
+            }
+
+        }
+
+        for (int i = 0; i < 2; i++) {
+            System.out.println();
+            for (int j = 0; j < n; j++) {
+                System.out.print(arrow[i][j]+"\t");
+            }
+
+        }
+        System.out.println();
+
+        distanceBetweenTwoPoints(arrow,n);
+
+    }
+}

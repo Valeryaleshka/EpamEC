@@ -1,0 +1,48 @@
+/*
+Написать метод(методы) для нахождения наибольшего общего делителя и наменьшего общего кратного двух натуральных чисел
+ */
+public class Test2 {
+
+    //Метод нахождения  НОК
+
+    public static int Nok (int a, int b){
+        int nok;
+        int nod = Nod(a,b);
+
+        nok = a*b/nod;
+        return nok;
+    }
+    
+    //Метод нахождения  НОД
+    
+    public static int Nod(int a, int b){
+        int nod=1;
+        if (a>=b){
+            for(int i = 2;i<=b;i++){
+                if( a%i==0 && b%i==0){
+                    nod = i;
+                }
+            }
+        }else {
+            for (int i = 2; i <= a; i++) {
+                if ( a%i==0 && b%i==0) {
+                    nod = i;
+                }
+            }
+        }
+        return nod;
+    }
+
+    ///Main
+
+    public static void main(String[] arg) {
+       
+        int a = 22;
+        int b = 33;
+        
+        System.out.print(Nok(a,b));
+
+    }
+}
+
+

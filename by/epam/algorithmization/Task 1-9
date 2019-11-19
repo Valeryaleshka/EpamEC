@@ -1,0 +1,40 @@
+public class Test2 {
+    public static void main(String[] arg) {
+
+
+        int arrow[] = {5,5,5,58,5,7,6,98,78,36,7,525,85,25,5,2,2,2,2,2};
+        int arrow2[] = new int[arrow.length];
+        int numberCount = 0;
+        int maxNumber = arrow2[0];
+
+        //Находим число повторений для каждлого числа и записываем во второй массив 
+        //сразу находим максимальное число повторений
+
+        for(int i = 0;i<arrow.length;i++){
+            for(int a = 0;a<arrow.length;a++) {
+                if (arrow[i] == arrow[a]) {
+                    numberCount++;
+                }
+            }
+            arrow2[i]=numberCount;
+                if (numberCount>maxNumber){
+                    maxNumber=numberCount;
+                }
+            numberCount=0;
+        }
+        
+
+        // находим наименьшее число в первом массиве
+        int minNumber = arrow[0];
+        for(int i = 0;i<arrow.length;i++){
+            if(maxNumber==arrow2[i]){
+                if (arrow[i]<minNumber){
+                    minNumber=arrow[i];
+                }
+            }
+        }
+
+        System.out.print("Наименьшее число "+minNumber+" Повторяется "+ maxNumber+" раза");
+
+        }
+    }

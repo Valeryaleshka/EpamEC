@@ -1,0 +1,49 @@
+public class Test2 {
+    public static void main(String[] arg) {
+       
+        int arrow[] = {1, 2, 3, 4, 5, 6, 7, 8};
+        int arrow2[] = {9, 10, 11, 12, 13, 14, 15};
+        int k = 6;
+        int arrow3[] = new int[arrow.length + arrow2.length];
+
+
+        for (int i = 0; i < arrow3.length; i++) {
+
+
+            if (i + 1 < k) {
+                arrow3[i] = arrow[i];
+            }
+
+
+            if (i+1==k){
+                for(int a =0; a<arrow2.length;a++){
+                    arrow3[i+a]=arrow2[a];
+                }
+            }
+
+
+            if (i + 1 >= k + arrow2.length) {
+                arrow3[i]=arrow[i-arrow2.length];
+            }
+        }
+
+
+
+
+
+            for (int i = 0; i < arrow.length; i++) {
+                System.out.print(arrow[i] + ", ");
+            }
+            System.out.println();
+            for (int i = 0; i < arrow2.length; i++) {
+                System.out.print(arrow2[i] + ", ");
+            }
+            System.out.println();
+            for (int i = 0; i < arrow3.length; i++) {
+                System.out.print(arrow3[i] + ", ");
+            }
+
+        }
+    }
+
+

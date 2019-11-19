@@ -1,0 +1,88 @@
+import java.util.Random;
+import java.util.Scanner;
+
+public class Test2 {
+    public static void main(String[] arg) {
+        Random random = new Random();
+        Scanner scanner = new Scanner(System.in);
+
+        boolean bool;
+        int temp,number;
+        int arrow[][] = new int[10][20];
+
+        ////заполняем матрицу
+
+        for (int i = 0; i < 10; i++) {
+            for (int j = 0; j < 20; j++) {
+                arrow[i][j] = random.nextInt(16);
+            }
+        }
+
+        // выводим изначальную матрицу
+        for (int i = 0; i < 10; i++) {
+            System.out.println();
+            for (int j = 0; j < 20; j++) {
+                System.out.print(arrow[i][j] + "\t");
+            }
+        }
+
+        System.out.println("\n");
+
+        //Запрашиваем действия
+
+        do{
+            System.out.println("Введите 1 - если хотите отсортировать строки по убыванию, 2 - если по возрастанию");
+                while (!scanner.hasNextInt()){
+                System.out.println("Введите 1 - если хотите отсортировать строки по убыванию, 2 - если по возрастанию");
+                scanner.next();
+            }
+            number = scanner.nextInt();
+        }while(number < 1|| number >2);
+
+        if(number == 1) {
+            for (int i = 0; i < 10; i++) {
+                bool = false;
+                while (!bool) {
+                    bool = true;
+                    for (int j = 0; j < 19; j++) {
+                        if (arrow[i][j] > arrow[i][j + 1]) {
+                            temp = arrow[i][j];
+                            arrow[i][j] = arrow[i][j + 1];
+                            arrow[i][j + 1] = temp;
+                            bool = false;
+                        }
+                    }
+                }
+            }
+        }
+            else {
+                for (int i = 0; i < 10; i++) {
+                    bool = false;
+                    while(!bool){
+                        bool = true;
+                        for(int j = 0; j < 19; j++) {
+                            if (arrow[i][j] < arrow[i][j + 1]) {
+                                temp = arrow[i][j];
+                                arrow[i][j] = arrow[i][j + 1];
+                                arrow[i][j + 1] = temp;
+                                bool = false;
+                            }
+                        }
+                    }
+                }
+            }
+
+         //Выводим готовую матрицу
+
+
+        for (int i = 0; i < 10; i++) {
+            System.out.println();
+            for (int j = 0; j < 20; j++) {
+                System.out.print(arrow[i][j] + "\t");
+            }
+        }
+    }
+}
+
+
+

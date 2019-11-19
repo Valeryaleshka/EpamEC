@@ -1,0 +1,18 @@
+public class Test2 {
+    public static void main(String[] arg) {
+        int count = 0;
+        int z = 7;
+    int arrow[] = {5,4,6,8,12,54,321,6,2,1,478,3,10,6,2,5,8};
+    for(int i = 0;i<arrow.length;i++) {
+        if (arrow[i] > z) {
+            arrow[i] = z;
+            count++;
+        }
+    }
+    System.out.println("Количество замен - "+count);
+    System.out.print("[");
+    for (int x = 0; x<arrow.length;x++){
+        System.out.print(arrow[x]+" ");}
+        System.out.print("]");
+    }
+}

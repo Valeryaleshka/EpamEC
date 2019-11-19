@@ -1,0 +1,40 @@
+public class Test2 {
+    public static void main(String[] arg) {
+
+        int arrow1[] = {1, 2, 3, 4, 5, 6, 7, 8};
+        int arrow2[] = {2, 4, 5, 7, 13, 14, 15};
+        int arrow3[] = new int[arrow1.length + arrow2.length];
+        int temp;
+        boolean bool;
+
+
+        for(int i = 0; i< arrow3.length;i++){
+            if(i<arrow1.length) {
+                arrow3[i]=arrow1[i];
+            }else {
+                arrow3[i]=arrow2[i-arrow1.length];
+            }
+        }
+
+        do{
+            bool = true;
+            for (int i = 0;i<arrow3.length-1;i++){
+                if(arrow3[i]>arrow3[i+1]){
+                    temp = arrow3[i];
+                    arrow3[i]= arrow3[i+1];
+                    arrow3[i+1]=temp;
+                    bool = false;
+                }
+            }
+
+        }while(!bool);
+        
+        
+        for(int i = 0; i< arrow3.length;i++) {
+            System.out.print(arrow3[i]+" ");
+        }
+
+    }
+}
+
+

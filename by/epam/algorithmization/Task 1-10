@@ -1,0 +1,19 @@
+public class Test2 {
+    public static void main(String[] arg) {
+
+        int arrow[] = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16};
+        int temp;
+
+        for (int i=2;i<arrow.length;i++){
+              arrow[i-1] = 0;
+                for(int b = i;b<arrow.length;b++){
+                    temp = arrow[b];
+                    arrow[b]=arrow[b-1];
+                    arrow[b-1]=temp;
+                }
+            }
+        for (int i = 0; i<arrow.length;i++){
+        System.out.print(arrow[i]+" ");
+        }
+    }
+}

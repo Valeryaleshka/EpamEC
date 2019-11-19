@@ -1,0 +1,88 @@
+/*
+
+Даны натуральные числа K и N. Написать метод формирования массива, элементами которого являются числа, чусса которых равна К и которые не больше N.
+
+ */
+
+public class Test2 {
+
+    //Метод создания массива, элементами которого являются числа, чусса которых равна К и которые не больше N.
+
+    public static int [] getRightArrow( int summOfElements, int maxNumber) {
+
+        int count = 0;
+        int start = 0;
+        int summ=0;
+        int arrow[]=new int[1000];
+
+
+        for (int i = 0; i < arrow.length; i++) {
+            
+            //Проверяем числа от 0 до N на условия
+            for (int j = start+1; j < maxNumber; j++) {
+
+                summ = 0;
+                int temp = j;
+
+                while (temp > 0) {
+                    int chislo = temp % 10;
+                    temp /= 10;
+                    summ += chislo;
+
+
+                }
+                if(summ==summOfElements){
+                    start = j;
+                    break;
+                }
+            }
+            
+            if (i>0) {
+                if (start == arrow[i - 1]) {
+                    start = 0;
+                    break;
+                }
+            }
+            
+            //Добавляем в первичный массив
+            arrow[i]=start;
+
+        }
+        
+        // определяем необходимую длинну массива
+        for (int i = 0; i < arrow.length; i++) {
+            if (arrow[i]>0){
+                count++;
+            }
+        }
+        
+        //создаем конечный массив
+        
+        int arrowMain [] = new int[count];
+        
+        //копируем все значения в конечный массив
+
+        for (int i = 0; i < arrowMain.length; i++) {
+            arrowMain[i]=arrow[i];
+
+        }
+        return arrowMain;
+    }
+
+
+    //Main
+
+    public static void main(String[] arg) {
+
+        int k = 12;
+        int n = 500;
+
+        int [] arrow = getRightArrow(k,n);
+
+
+
+        for (int i = 0; i <arrow.length ; i++) {
+            System.out.print(arrow[i]+" ");
+        }
+    }
+}

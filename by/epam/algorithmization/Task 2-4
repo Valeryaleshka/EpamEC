@@ -1,0 +1,31 @@
+public class Test2 {
+    public static void main(String[] arg) {
+
+        int n = 6;
+        
+        
+        int arrow[][] = new int[n][n];
+
+        
+        for (int i = 0; i < n; i++) {
+            if (i % 2 == 0) {
+                for (int k = 0; k < n; k++) {
+                    arrow[i][k] = k+1;
+                }
+            } else for (int k = 0; k < n; k++) {
+                    arrow[i][k] = n - k;
+
+            }
+        }
+
+        //выведем полученную матрицу
+
+        for (int i = 0; i < n; i++) {
+            System.out.println();
+            for (int j = 0; j < n; j++) {
+                System.out.print(arrow[i][j] + "\t");
+            }
+        }
+    }
+}
+

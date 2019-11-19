@@ -1,0 +1,91 @@
+/*
+Найти все натуральные n-значные числа, цифры в которых образуют строго возрастающую последовательность (например, 1234, 5789). Для решения задачи использовать декомпозицию.
+ */
+
+public class Test2 {
+
+    //Метод проверки числа на возрастающую последовательность
+
+    public static boolean checkNumber(int n) {
+
+        int temp = n%10;
+        n/=10;
+
+        while(n>0){
+
+            if (n%10>=temp){
+                return false;
+            }
+
+            temp = n%10;
+
+            n/=10;
+        }
+        return true;
+    }
+
+    //Метод проверки нужного количества цифр в числе
+
+    public static boolean checkNumbersOfElements(int n, int number){
+
+        int count = 0;
+
+        while(number>0){
+            count ++;
+            number/=10;
+        }
+
+        if(count == n){
+            return true;
+        }
+
+        return false;
+    }
+
+    //Метод нахождения нужного числа и вывод его на печать
+
+    public static void findNumbers(int n){
+
+        for (int i = 0; i < 999999999; i++) {
+            if (checkNumbersOfElements(n,i)){
+                if(checkNumber(i)){
+                    System.out.print(i+" ");
+                }
+            }
+            if (checkNumbersOfElementsMoreThenN(n,i)){
+                break;
+            }
+
+
+        }
+
+    }
+
+    //Метод проверки количества цифр привышающего n
+
+    public static boolean checkNumbersOfElementsMoreThenN(int n, int number) {
+
+        int count = 0;
+
+        while (number > 0) {
+            count++;
+            number /= 10;
+        }
+
+        if (count > n) {
+            return true;
+        }
+
+        return false;
+    }
+
+
+    //Main
+
+    public static void main(String[] arg) {
+
+        int k = 2;
+
+        findNumbers(k);
+    }
+}

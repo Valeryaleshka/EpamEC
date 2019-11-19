@@ -1,0 +1,74 @@
+/*Даны дроби p1/q1, p2/q2...pn/qn (pi,qi - натуральные). 
+Составить программу, которая приводит эти дроби
+к общему знаменателю и упорядочивает их в порядке возрастания.
+*/
+
+
+public class Test2 {
+    public static int znamenatelFind(int arr2[]){
+
+        boolean bool = false;
+        //начальный общий знаменатель
+        int znam = 1;
+
+
+        //находим наименьший
+        do{
+            bool = true;
+            znam++;
+
+            for(int i=0;i<arr2.length;i++){
+                if(znam%arr2[i]!=0){
+                    bool=false;
+                }
+            }
+
+        }while (!bool);
+
+        //возвращаем значение наименьшего знаменателя
+        return znam;
+
+    }
+    public static void main(String[] arg) {
+
+        int temp;
+        int cheslitel[] = {5,3,5,7,5,1,7,98};
+        int znamenatel[] = {2,5,3,6,4,1,9,22};
+        int obshiiZnamenatel = znamenatelFind(znamenatel);
+
+        //Приводим все числа к общему знаменателю
+
+        for(int j = 0;j <cheslitel.length;j++){
+            temp=cheslitel[j];
+            cheslitel[j] = obshiiZnamenatel/znamenatel[j]*temp;
+        }
+        for (int j = 0;j<znamenatel.length;j++){
+            znamenatel[j]=obshiiZnamenatel;
+        }
+
+        //Сортируем по возрастанию
+
+        int i = 0;
+        while ( i<cheslitel.length-1) {
+            if (cheslitel[i] <= cheslitel[i + 1]) {
+                i++;
+            } else if (i != 0) {
+                temp = cheslitel[i];
+                cheslitel[i] = cheslitel[i + 1];
+                cheslitel[i + 1] = temp;
+                i--;
+            } else {
+                temp = cheslitel[i];
+                cheslitel[i] = cheslitel[i + 1];
+                cheslitel[i + 1] = temp;
+                i++;
+            }
+        }
+
+        //Выводим результат
+
+        for(int j= 0;j<cheslitel.length;j++){
+            System.out.println(cheslitel[j]+"/"+znamenatel[j]);
+        }
+    }
+}

@@ -1,0 +1,56 @@
+/*
+
+Написать метод(методы)б определяющий, в каком из данных двух чисел больше цифр.
+
+ */
+
+
+public class Test2 {
+
+    //Метод нахождения количества цифр в числе.
+
+    public static int getLength(int number) {
+
+        int count = 0;
+
+        while (number != 0) {
+            count++;
+            number /= 10;
+
+
+        }
+        return count;
+    }
+
+    //Метод сравнивания количества цифр в числе.
+
+    public static void getAnswer(int a, int b) {
+
+        if (getLength(a)>getLength(b)) {
+            System.out.print("В первом числе больше цифр чем во втором");
+        }
+
+        if (getLength(a)<getLength(b)) {
+            System.out.print("В первом числе меньше цифр чем во втором");
+        }
+
+        if (getLength(a)==getLength(b)) {
+            System.out.print("Число цифр в первом и втором числе одинаково");
+        }
+
+
+
+    }
+
+
+    //Main
+
+    public static void main(String[] arg) {
+
+        int a = 352185;
+        int b = 5546;
+
+        getAnswer(a,b);
+    }
+
+}

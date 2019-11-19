@@ -1,0 +1,45 @@
+import java.util.Random;
+public class Test2 {
+    public static void main(String[] arg) {
+        
+        
+        Random random = new Random();
+        int arrow[][] = new int[5][5];
+        
+        System.out.println("Первоначальная матрица");
+        
+        //заполним матрицу рандомно
+        
+        for (int i = 0; i < 5; i++) {
+            for (int k = 0; k < 5; k++) {
+                arrow[i][k] = random.nextInt(20);
+            }
+        }
+        
+        //выведем полученную матрицу
+        
+        for (int i = 0; i < 5; i++) {
+            System.out.println();
+            for (int k = 0; k < 5; k++) {
+                System.out.print(arrow[i][k] + "\t");
+            }
+        }
+
+        
+        System.out.println();
+        
+        //проверим условия и выведем нудные столбцы        
+
+        for (int k = 1; k < 6; k++) {
+            if (k % 2 != 0) {
+                System.out.println();
+                if (arrow[0][k-1] > arrow[4][k-1]) {
+                      for (int j = 0; j < 5; j++) {
+                            System.out.println(arrow[j][k-1] + "\t");
+                      }
+                }
+            }
+        }
+    }
+}
+

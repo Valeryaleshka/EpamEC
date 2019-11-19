@@ -1,0 +1,41 @@
+public class Test2 {
+    public static void main(String[] arg) {
+
+
+        int arrow[] = {5,5,5,58,5,7,6,98,78,36,525,85,25,5};
+
+        int min = arrow[0];
+        int x = 0;
+        int count=0;
+
+
+        for(int i = 0;i<arrow.length;i++){
+            if (min>arrow[i]){
+                min = arrow[i];
+            }
+        }
+
+        for(int i = 0;i<arrow.length;i++){
+            if (min==arrow[i]){
+                count++;
+            }
+        }
+        
+        int arrowwitoutmin[]= new int[arrow.length-count];
+
+
+        for (int i = 0;i<arrow.length;i++) {
+            if (arrow[i] > min) {
+                arrowwitoutmin[x] = arrow[i];
+                x++;
+            }
+        }
+
+        for (int i = 0;i<arrowwitoutmin.length;i++) {
+            System.out.print(arrowwitoutmin[i]+" ");
+
+            }
+        }
+    }
+
+

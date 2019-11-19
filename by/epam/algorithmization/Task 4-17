@@ -1,0 +1,48 @@
+/*
+Из заданного числа вычли сумму его цифр. Из результата вновь вычли сумму его цифр и т.д.
+Сколько таких действий надо произвести, что бы получился нуль? Для решения задачи использовать декомпозицию.
+ */
+
+public class Test2 {
+
+    //Метод находения суммы цифр
+
+    public static int findSummOfElements(int n) {
+
+        int summ = 0;
+
+        while(n>0){
+            summ+=n%10;
+            n/=10;
+        }
+
+        return summ;
+
+    }
+
+    //Метод подсчета операций вычитания
+
+    public static int checkNumberEvenCount(int n) {
+
+        int count = 0;
+
+        while (n > 0) {
+            count++;
+            n-=findSummOfElements(n);
+
+            }
+
+        return count;
+        }
+
+
+
+    //Main
+
+    public static void main(String[] arg) {
+
+        int n = 20;
+
+        System.out.println(checkNumberEvenCount(n));
+    }
+}

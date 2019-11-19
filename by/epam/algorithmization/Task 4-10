@@ -1,0 +1,56 @@
+/*
+
+Дано натуральное число N. Написать метод(методы), для формирования массива, элементами которого являются цифры числа N.
+
+ */
+
+
+public class Test2 {
+
+    //Метод нахождения длинны массива.
+
+    public static int getArrowLength(int number) {
+
+        int count = 0;
+
+        while (number != 0) {
+            count++;
+            number /= 10;
+
+
+        }
+        return count;
+    }
+
+    //Метод заполнения массива цифрами из натурального числа.
+
+    public static int [] getArrow(int number) {
+
+
+
+        int arrow[] = new int[getArrowLength(number)];
+
+        for (int i = arrow.length-1; i >=0; i--) {
+            arrow[i]=number%10;
+            number=number/10;
+        }
+
+        return arrow;
+    }
+
+
+    //Main
+    
+    public static void main(String[] arg) {
+
+    int n = 352185;
+
+    int arrow []= getArrow(n);
+
+
+        for (int i = 0; i <arrow.length ; i++) {
+            System.out.print(arrow[i]+" ");
+        }
+
+    }
+}

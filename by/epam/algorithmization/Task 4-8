@@ -1,0 +1,40 @@
+/*
+Задан массив D. Определить следующие суммы D[1]+D[2]+D[3]; D[3]+D[4]+D[5].
+Пояснение. Составить метод(методы) для вычисления суммы трех последовательно расположенных элементов массива с номерами от к до m.
+ */
+
+import java.util.Random;
+
+public class Test2 {
+
+    //Метод вычисления трех последовательных чисел в массиве
+    public static int summOfThree(int arrow[],int element){
+
+        int summ = -1;
+
+        if(element<arrow.length-2 && element>=0){
+            summ = arrow[element]+arrow[element+1]+arrow[element+2];
+        }
+
+        return summ;
+}
+
+
+    ///Main
+
+    public static void main(String[] arg) {
+
+        Random random = new Random();
+        int [] arrow = new int[20];
+
+        for (int i = 0; i < arrow.length; i++) {
+            arrow[i]=random.nextInt(20);
+        }
+        for (int i = 0; i < arrow.length; i++) {
+            System.out.print(arrow[i]+"\t");
+
+        }
+        System.out.print("\n"+summOfThree(arrow,4));
+
+    }
+}

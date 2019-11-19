@@ -1,0 +1,12 @@
+public class Test2 {
+    public static void main(String[] arg) {
+        int summ = 0;
+    int arrow[] = {5,4,6,8,12,54,321,6,2,1,478,3,10,6,2,5,8};
+    for(int i = 0;i<arrow.length;i++){
+        if (arrow[i]%5==0){
+            summ+= arrow[i];
+        }
+    }
+    System.out.println(summ);
+    }
+}
