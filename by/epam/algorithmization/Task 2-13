@@ -1,3 +1,5 @@
+//13. Отсотрировать стобцы матрицы по возрастанию и убыванию значений эементов.
+
 import java.util.Random;
 import java.util.Scanner;
 
