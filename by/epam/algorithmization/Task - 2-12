@@ -1,3 +1,6 @@
+//12. Отсортировать строки матрицы по возрастанию и убыванию значений элементов.
+
+
 import java.util.Random;
 import java.util.Scanner;
 
