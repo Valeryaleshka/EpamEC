@@ -1,3 +1,6 @@
+//В массиве целых чисел с количеством элементов n найти наиболее часто встречающееся число. Если таких
+//чисел несколько, то определить наименьшее из них.
+
 public class Test2 {
     public static void main(String[] arg) {
 
@@ -11,8 +14,8 @@ public class Test2 {
         //сразу находим максимальное число повторений
 
         for(int i = 0;i<arrow.length;i++){
-            for(int a = 0;a<arrow.length;a++) {
-                if (arrow[i] == arrow[a]) {
+            for(int j = 0;j<arrow.length;j++) {
+                if (arrow[i] == arrow[j]) {
                     numberCount++;
                 }
             }
@@ -24,7 +27,7 @@ public class Test2 {
         }
         
 
-        // находим наименьшее число в первом массиве
+        // находим наименьшее число
         int minNumber = arrow[0];
         for(int i = 0;i<arrow.length;i++){
             if(maxNumber==arrow2[i]){
