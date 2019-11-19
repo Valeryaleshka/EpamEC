@@ -1,3 +1,5 @@
+////задание в файле Practice (tasks).pdf
+
 import static java.lang.Math.pow;
 import static java.lang.StrictMath.sin;
 
