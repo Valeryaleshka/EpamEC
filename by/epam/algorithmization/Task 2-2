@@ -1,3 +1,5 @@
+//2. Дана квадратная матрица. Вывести на экран элементы, стоящие на диагонали.
+
 import java.util.Random;
 public class Test2 {
     public static void main(String[] arg) {
