@@ -1,28 +1,36 @@
+//4. Даны действительные числа а1 ,а2 ,..., аn . Поменять местами наибольший и наименьший элементы.
+
 public class Test2 {
     public static void main(String[] arg) {
 
-        int it;
+        int temp;
         int arrow[] = {5,4,6,-8,0,12,54,-321,6,2,1,0,478,3,10,-6,2,5,8};
-        int max = arrow[1];
-        int min=arrow[1];
-        int maxx = 0;
-        int minn = 0;
-    for (int i=0;i<arrow.length;i++){//находим мин и макс
+        
+        int max = arrow[0];
+        int min =arrow[0];
+       
+        int maxNumberPosition = 0;
+        int minNumberPosition = 0;
+    
+    for (int i=0;i<arrow.length;i++){
+        
         if (min>arrow[i]) {
             min=arrow[i];
-            minn=i;
+            minNumberPosition=i;
         }
+        
         if (max<arrow[i]) {
             max=arrow[i];
-            maxx=i;
+            maxNumberPosition=i;
         }
         }
             System.out.println("Min - "+ min +"; Max - "+ max);
-            it=arrow[maxx]; //меняем местами мин и макс в массиве
-            arrow[maxx]=arrow[minn];
-            arrow[minn]=it;
+            
+            temp=arrow[maxx]; 
+            arrow[maxNumberPosition]=arrow[minNumberPosition];
+            arrow[minNumberPosition]=it;
 
-            for (int i=0;i<arrow.length;i++){//выводим итоговый массив на экран
+            for (int i=0;i<arrow.length;i++){
                 System.out.print(arrow[i]+", ");
             }
 
