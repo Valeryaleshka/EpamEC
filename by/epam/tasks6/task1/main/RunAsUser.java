@@ -67,7 +67,7 @@ public class RunAsUser {
                 System.out.println("Напишите о книге которую хотите предложить");
                 String text = reader.readLine();
 
-                String password = "FordEscort6";
+                String password = "Password";
                 System.out.println("Спасибо");
 
                 EmailAuthenticator emailAuthenticator = new EmailAuthenticator(user.geteMail(),password);

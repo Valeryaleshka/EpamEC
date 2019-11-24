@@ -23,7 +23,7 @@ public class SendEmail {
 
         Message message = new MimeMessage(session);
         try {
-            message.setFrom(new InternetAddress("valeryaleshka@gmail.com"));
+            message.setFrom(new InternetAddress("AdminEmail@gmail.com"));
             message.setRecipient(Message.RecipientType.TO, new InternetAddress(user.geteMail()));
             message.setSubject("Исправлена библиотека");
             message.setText("Добавлена книга"+book.toString());
@@ -53,7 +53,7 @@ public class SendEmail {
         Message message = new MimeMessage(session);
         try {
             message.setFrom(new InternetAddress(user.geteMail()));
-            message.setRecipient(Message.RecipientType.TO, new InternetAddress("valeron@tut.by"));
+            message.setRecipient(Message.RecipientType.TO, new InternetAddress("adminEmail@gmail.com"));
             message.setSubject("Предлагаю добавить книгу");
             message.setText(string);
 

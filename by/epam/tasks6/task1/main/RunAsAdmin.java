@@ -58,7 +58,7 @@ public class RunAsAdmin {
 
                 Book newBook = libraryLogic.addNewBookToLibrary(library);
 
-                EmailAuthenticator emailAuthenticator = new EmailAuthenticator(user.geteMail(),"FordEscort6");
+                EmailAuthenticator emailAuthenticator = new EmailAuthenticator(user.geteMail(),"AdminPassword");
                 SendEmail sendEmail = new SendEmail();
                 for (User userToSend:users.getUsers()) {
                     sendEmail.sendEmailAsAdministrator(emailAuthenticator,userToSend,newBook);
